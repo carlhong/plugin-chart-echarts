@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+    <id>com.fr.plugin.export.xml</id>
+    <name><![CDATA[导出XML]]></name>
+    <active>yes</active>
+    <version>1.2</version>
+    <env-version>8.0</env-version>
+	 <jartime>2016-01-21</jartime>
+    <vendor>洪七公</vendor>
+    <description><![CDATA[将报表导出为XML文件]]></description>
+    <change-notes><![CDATA[
+        <p>[2016-01-19]例子</p>
+    ]]></change-notes>
+    <extra-core>
+        <LocaleFinder class="com.fr.plugin.export.xml.XmlLocaleFinder"/>
+    </extra-core>
+    <extra-report>
+        <ExtensionButtonProvider class="com.fr.plugin.export.xml.core.XmlExtensionButton"/>
+        <ExportOperateProvider class="com.fr.plugin.export.xml.core.XmlExport"/>
+        <JavaScriptFileHandler class="com.fr.plugin.export.xml.XmlFileHandler"/>
+    </extra-report>
+    <extra-designer>
+        <ToolbarItemProvider class="com.fr.plugin.export.xml.ui.XmlExportToolbarUI"/>
+    </extra-designer>
+</plugin>
