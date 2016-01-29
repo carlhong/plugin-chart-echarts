@@ -8,6 +8,6 @@ import com.fr.stable.fun.impl.AbstractLocaleFinder;
 public class EChartsLocaleFinder extends AbstractLocaleFinder {
     @Override
     public String find() {
-        return "/com/fr/solution/plugin/chart/echarts/locale/echarts";
+        return "com/fr/solution/plugin/chart/echarts/locale/echarts";
     }
 }

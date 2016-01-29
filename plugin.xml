@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><plugin>
-    <id>com.fr.plugin.solution.chart.echarts</id>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+    <id>com.fr.solution.plugin.chart.echarts</id>
     <name><![CDATA[ECharts图表]]></name>
     <active>yes</active>
     <version>1.1</version>
@@ -11,17 +12,19 @@
         <p>[2016-01-01]中国地图</p>
     ]]></change-notes>
     <extra-core>
-        <LocaleFinder class="com.fr.solution.plugin.chart.echarts.EChartsFileLoader"/>
+        <LocaleFinder class="com.fr.solution.plugin.chart.echarts.EChartsLocaleFinder"/>
         <JavaScriptFileHandler class="com.fr.solution.plugin.chart.echarts.EChartsFileLoader"/>
     </extra-core>
     <extra-report/>
     <extra-designer/>
     <extra-platform/>
     <extra-chart>
-        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.ui.map.ChinaMapChartUI" plotID="ChineseMapPlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.ChineseMap"
+                                  plotID="EChartsChinaMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
-        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.chinesemap.ChineseMapUI" plotID="ChineseMapPlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.ChineseMapUI"
+                                    plotID="EChartsChinaMapPlot"/>
     </extra-chart-designer>
 </plugin>
