@@ -11,12 +11,15 @@ import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapPlot;
  */
 public class ChineseMap extends AbstractIndependentEChartsProvider {
 
-    private static Chart[] createChineseMap(String imagePath) {
+    private static ECharts createChineseMap() {
         ChineseMapPlot plot = new ChineseMapPlot();
-        ECharts chart = new ECharts(plot);
-        chart.setChartImagePath(imagePath);
-        return new ECharts[]{chart};
+        return new ECharts(plot);
     }
+
+    public static ECharts[] charts = new ECharts[] {
+            createChineseMap()
+    };
+
 
     @Override
     public String getChartName() {
@@ -30,7 +33,7 @@ public class ChineseMap extends AbstractIndependentEChartsProvider {
 
     @Override
     public Chart[] getChartTypes() {
-        return createChineseMap(getChartImagePath());
+        return charts;
     }
 
     @Override

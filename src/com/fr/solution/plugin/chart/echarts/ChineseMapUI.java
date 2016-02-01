@@ -6,8 +6,8 @@ import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.report.AbstractReportDataContentPane;
 import com.fr.design.mainframe.chart.gui.data.table.AbstractTableDataContentPane;
 import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
-import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapReportDataContentPane;
-import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapTableDataContentPane;
+import com.fr.solution.plugin.chart.echarts.ui.map.ChineseMapReportDataContentPane;
+import com.fr.solution.plugin.chart.echarts.ui.map.ChineseMapTableDataContentPane;
 import com.fr.solution.plugin.chart.echarts.ui.map.ChineseChartTypePane;
 
 /**
