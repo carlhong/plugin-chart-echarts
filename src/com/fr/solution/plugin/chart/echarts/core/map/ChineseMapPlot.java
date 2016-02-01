@@ -37,7 +37,7 @@ public class ChineseMapPlot extends Plot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return FunctionProcessor.EMAIL;
+        return ChineseMapFunctionProcessor.MAP;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {

@@ -9,20 +9,27 @@ import com.fr.general.ComparatorUtils;
 /**
  * Created by richie on 16/1/29.
  */
-public class ECharts extends Chart {
+public class NewChart extends Chart {
 
-    public ECharts() {
+    public NewChart() {
         setWrapperName("EChartsFactory");
     }
 
-    public ECharts(Plot plot) {
+    public NewChart(Plot plot) {
         setPlot(plot);
         setWrapperName("EChartsFactory");
     }
 
     @Override
     public BaseChartGlyph createGlyph(ChartData chartData) {
-        return super.createGlyph(chartData);
+        NewChartGlyph glyph = new NewChartGlyph();
+        glyph.setGeneralInfo(this);
+        glyph.setWrapperName(wrapperName);
+        glyph.setChartImagePath(getImagePath());
+        glyph.setRequiredJS(getRequiredJS());
+        glyph.setJSDraw(isJSDraw());
+
+        return glyph;
     }
 
     /**
@@ -31,6 +38,6 @@ public class ECharts extends Chart {
      * @return 是否是obClass对象
      */
     public boolean accept(Class<? extends Chart> obClass){
-        return ComparatorUtils.equals(ECharts.class, obClass);
+        return ComparatorUtils.equals(NewChart.class, obClass);
     }
 }

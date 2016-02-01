@@ -3,7 +3,7 @@ package com.fr.solution.plugin.chart.echarts;
 import com.fr.chart.chartattr.Chart;
 import com.fr.general.Inter;
 import com.fr.solution.plugin.chart.echarts.base.AbstractIndependentEChartsProvider;
-import com.fr.solution.plugin.chart.echarts.base.ECharts;
+import com.fr.solution.plugin.chart.echarts.base.NewChart;
 import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapPlot;
 
 /**
@@ -11,12 +11,12 @@ import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapPlot;
  */
 public class ChineseMap extends AbstractIndependentEChartsProvider {
 
-    private static ECharts createChineseMap() {
+    private static NewChart createChineseMap() {
         ChineseMapPlot plot = new ChineseMapPlot();
-        return new ECharts(plot);
+        return new NewChart(plot);
     }
 
-    public static ECharts[] charts = new ECharts[] {
+    public static NewChart[] charts = new NewChart[] {
             createChineseMap()
     };
 
