@@ -17,7 +17,14 @@ public class NewTitleGlyph extends ChartGlyph {
 
     @Override
     public JSONObject toJSONObject(Repository repo) throws JSONException {
-        return super.toJSONObject(repo);
+        return createTitle(repo);
+    }
+
+    private JSONObject createTitle(Repository repo) throws JSONException {
+        return JSONObject.create()
+                .put("text", "iPhoneœ˙¡ø")
+                .put("subtext", "¥ø Ù–Èππ")
+                .put("x", "center");
     }
 
 }

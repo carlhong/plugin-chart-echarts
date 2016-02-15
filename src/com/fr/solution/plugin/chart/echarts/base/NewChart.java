@@ -10,22 +10,21 @@ import com.fr.general.ComparatorUtils;
  */
 public class NewChart extends Chart {
 
-    private NewPlot newPlot;
-
 
     public NewChart() {
         setWrapperName("EChartsFactory");
     }
 
     public NewChart(NewPlot plot) {
+        super(plot);
         setWrapperName("EChartsFactory");
-        this.newPlot = plot;
     }
 
     @Override
     public BaseChartGlyph createGlyph(ChartData chartData) {
         NewGlyph glyph = new NewGlyph();
         glyph.setGeneralInfo(this);
+        NewPlot newPlot = (NewPlot) getPlot();
         if (newPlot != null) {
             glyph.setLegendGlyph(newPlot.createChartLegendGlyph(chartData));
             glyph.setTitleGlyph(newPlot.createChartTitleGlyph(chartData));

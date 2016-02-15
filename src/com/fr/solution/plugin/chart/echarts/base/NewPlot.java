@@ -13,6 +13,8 @@ public abstract class NewPlot extends Plot {
         return ComparatorUtils.equals(NewPlot.class, obClass);
     }
 
+
+
     public NewTitleGlyph createChartTitleGlyph(ChartData chartData) {
         return new NewTitleGlyph("iPhone", "iPhone");
     }
