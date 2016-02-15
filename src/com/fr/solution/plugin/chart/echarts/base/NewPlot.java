@@ -14,7 +14,7 @@ public abstract class NewPlot extends Plot {
     }
 
     public NewTitleGlyph createChartTitleGlyph(ChartData chartData) {
-        return null;
+        return new NewTitleGlyph("iPhone", "iPhone");
     }
 
     public NewLegendGlyph createChartLegendGlyph(ChartData chartData) {

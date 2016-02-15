@@ -26,6 +26,10 @@ public class NewChart extends Chart {
     public BaseChartGlyph createGlyph(ChartData chartData) {
         NewGlyph glyph = new NewGlyph();
         glyph.setGeneralInfo(this);
+        if (newPlot != null) {
+            glyph.setLegendGlyph(newPlot.createChartLegendGlyph(chartData));
+            glyph.setTitleGlyph(newPlot.createChartTitleGlyph(chartData));
+        }
         glyph.setWrapperName(getWrapperName());
         glyph.setChartImagePath(getImagePath());
         glyph.setRequiredJS(getRequiredJS());
