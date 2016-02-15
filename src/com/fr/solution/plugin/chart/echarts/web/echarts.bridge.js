@@ -25,9 +25,9 @@ EChartsFactory.prototype = {
     },
 
     resize : function() {
-
+        this.newCharts.resize();
     },
-    refresh:function(){
+    refresh:function() {
 
     },
 

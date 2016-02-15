@@ -3,15 +3,17 @@ package com.fr.solution.plugin.chart.echarts.core.map;
 import com.fr.base.chart.chartdata.ChartData;
 import com.fr.chart.chartattr.Plot;
 import com.fr.chart.chartdata.NormalChartData;
+import com.fr.chart.chartglyph.LegendGlyph;
 import com.fr.chart.chartglyph.PlotGlyph;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.Inter;
+import com.fr.solution.plugin.chart.echarts.base.NewPlot;
 import com.fr.stable.fun.FunctionProcessor;
 
 /**
  * Created by richie on 16/1/29.
  */
-public class ChineseMapPlot extends Plot {
+public class ChineseMapPlot extends NewPlot {
 
     @Override
     public PlotGlyph createPlotGlyph(ChartData chartData) {
@@ -48,4 +50,5 @@ public class ChineseMapPlot extends Plot {
     public String getPlotName() {
         return Inter.getLocText("Plugin-ECharts_Chinese_Map");
     }
+
 }

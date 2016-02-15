@@ -3,7 +3,6 @@ package com.fr.solution.plugin.chart.echarts.base;
 import com.fr.base.chart.BaseChartGlyph;
 import com.fr.base.chart.chartdata.ChartData;
 import com.fr.chart.chartattr.Chart;
-import com.fr.chart.chartattr.Plot;
 import com.fr.general.ComparatorUtils;
 
 /**
@@ -11,20 +10,23 @@ import com.fr.general.ComparatorUtils;
  */
 public class NewChart extends Chart {
 
+    private NewPlot newPlot;
+
+
     public NewChart() {
         setWrapperName("EChartsFactory");
     }
 
-    public NewChart(Plot plot) {
-        setPlot(plot);
+    public NewChart(NewPlot plot) {
         setWrapperName("EChartsFactory");
+        this.newPlot = plot;
     }
 
     @Override
     public BaseChartGlyph createGlyph(ChartData chartData) {
-        NewChartGlyph glyph = new NewChartGlyph();
+        NewGlyph glyph = new NewGlyph();
         glyph.setGeneralInfo(this);
-        glyph.setWrapperName(wrapperName);
+        glyph.setWrapperName(getWrapperName());
         glyph.setChartImagePath(getImagePath());
         glyph.setRequiredJS(getRequiredJS());
         glyph.setJSDraw(isJSDraw());

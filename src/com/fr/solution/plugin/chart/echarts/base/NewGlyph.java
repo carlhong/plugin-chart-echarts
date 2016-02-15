@@ -9,14 +9,41 @@ import com.fr.stable.web.Repository;
 /**
  * Created by richie on 16/1/29.
  */
-public class NewChartGlyph extends ChartGlyph {
+public class NewGlyph extends ChartGlyph {
+
+    private NewTitleGlyph titleGlyph;
+
+    private NewLegendGlyph legendGlyph;
+
+
+    public void setTitleGlyph(NewTitleGlyph titleGlyph) {
+        this.titleGlyph = titleGlyph;
+    }
+
+    @Override
+    public NewLegendGlyph getLegendGlyph() {
+        return legendGlyph;
+    }
+
+    public void setLegendGlyph(NewLegendGlyph legendGlyph) {
+        this.legendGlyph = legendGlyph;
+    }
 
     @Override
     public JSONObject toJSONObject(Repository repo) throws JSONException {
         JSONObject jo = new JSONObject();
         jo.put("title", createTitle(repo));
+//        if (titleGlyph != null) {
+//            jo.put("title", titleGlyph.toJSONObject(repo));
+//        }
         jo.put("tooltip", createTooltip(repo));
+
+
         jo.put("legend", createLegend(repo));
+
+//        if (legendGlyph != null) {
+//            jo.put("legend", legendGlyph.toJSONObject(repo));
+//        }
         jo.put("dataRange", createDataRange(repo));
         jo.put("series", createSeries(repo));
         return jo;
@@ -57,6 +84,7 @@ public class NewChartGlyph extends ChartGlyph {
                 .put("name", "iPhone3")
                 .put("type", "map")
                 .put("mapType", "china")
+                .put("itemStyle", createItemStyle(repo))
                 .put("data", JSONArray.create().put(JSONObject.create().put("name", "北京").put("value", 20)))
         );
 
@@ -64,6 +92,7 @@ public class NewChartGlyph extends ChartGlyph {
                 .put("name", "iPhone4")
                 .put("type", "map")
                 .put("mapType", "china")
+                .put("itemStyle", createItemStyle(repo))
                 .put("data", JSONArray.create().put(JSONObject.create().put("name", "江苏").put("value", 20)))
         );
 
@@ -71,10 +100,17 @@ public class NewChartGlyph extends ChartGlyph {
                 .put("name", "iPhone5")
                 .put("type", "map")
                 .put("mapType", "china")
+                .put("itemStyle", createItemStyle(repo))
                 .put("data", JSONArray.create().put(JSONObject.create().put("name", "四川").put("value", 20)))
         );
 
         return series;
     }
 
+    private JSONObject createItemStyle(Repository repo) throws JSONException {
+        JSONObject itemStyle = JSONObject.create();
+        itemStyle.put("normal", JSONObject.create().put("label", JSONObject.create().put("show", true)));
+        itemStyle.put("emphasis", JSONObject.create().put("label", JSONObject.create().put("show", true)));
+        return itemStyle;
+    }
 }
