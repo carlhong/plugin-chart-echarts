@@ -1,4 +1,4 @@
-package com.fr.solution.plugin.chart.echarts.base;
+package com.fr.solution.plugin.chart.echarts.glyph;
 
 import com.fr.chart.chartglyph.LegendGlyph;
 import com.fr.json.JSONArray;

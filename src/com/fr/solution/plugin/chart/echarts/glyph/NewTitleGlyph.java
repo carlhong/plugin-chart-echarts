@@ -1,6 +1,6 @@
-package com.fr.solution.plugin.chart.echarts.base;
+package com.fr.solution.plugin.chart.echarts.glyph;
 
-import com.fr.chart.chartglyph.ChartGlyph;
+import com.fr.chart.chartglyph.TitleGlyph;
 import com.fr.json.JSONException;
 import com.fr.json.JSONObject;
 import com.fr.stable.web.Repository;
@@ -8,8 +8,11 @@ import com.fr.stable.web.Repository;
 /**
  * Created by richie on 16/2/2.
  */
-public class NewTitleGlyph extends ChartGlyph {
+public class NewTitleGlyph extends TitleGlyph {
 
+    public NewTitleGlyph() {
+
+    }
 
     public NewTitleGlyph(String title, String subTitle) {
 

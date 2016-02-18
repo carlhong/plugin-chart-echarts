@@ -1,9 +1,11 @@
-package com.fr.solution.plugin.chart.echarts.base;
+package com.fr.solution.plugin.chart.echarts.glyph;
 
 import com.fr.chart.chartglyph.ChartGlyph;
 import com.fr.json.JSONArray;
 import com.fr.json.JSONException;
 import com.fr.json.JSONObject;
+import com.fr.solution.plugin.chart.echarts.glyph.NewLegendGlyph;
+import com.fr.solution.plugin.chart.echarts.glyph.NewTitleGlyph;
 import com.fr.stable.web.Repository;
 
 /**
