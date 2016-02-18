@@ -62,7 +62,7 @@ public class NewGlyph extends ChartGlyph {
                 .put("max", 2500)
                 .put("x", "left")
                 .put("y", "bottom")
-                .put("text", JSONArray.create().put("∏ﬂ").put("µÕ"));
+                .put("text", JSONArray.create().put("È´ò").put("‰Ωé"));
     }
 
     private JSONArray createSeries(Repository repo) throws JSONException {
@@ -73,7 +73,7 @@ public class NewGlyph extends ChartGlyph {
                 .put("type", "map")
                 .put("mapType", "china")
                 .put("itemStyle", createItemStyle(repo))
-                .put("data", JSONArray.create().put(JSONObject.create().put("name", "±±æ©").put("value", 20)))
+                .put("data", JSONArray.create().put(JSONObject.create().put("name", "Âåó‰∫¨").put("value", 20)))
         );
 
         series.put(JSONObject.create()
@@ -81,7 +81,7 @@ public class NewGlyph extends ChartGlyph {
                 .put("type", "map")
                 .put("mapType", "china")
                 .put("itemStyle", createItemStyle(repo))
-                .put("data", JSONArray.create().put(JSONObject.create().put("name", "Ω≠À’").put("value", 20)))
+                .put("data", JSONArray.create().put(JSONObject.create().put("name", "Ê±üËãè").put("value", 20)))
         );
 
         series.put(JSONObject.create()
@@ -89,7 +89,7 @@ public class NewGlyph extends ChartGlyph {
                 .put("type", "map")
                 .put("mapType", "china")
                 .put("itemStyle", createItemStyle(repo))
-                .put("data", JSONArray.create().put(JSONObject.create().put("name", "Àƒ¥®").put("value", 20)))
+                .put("data", JSONArray.create().put(JSONObject.create().put("name", "ÂõõÂ∑ù").put("value", 20)))
         );
 
         return series;

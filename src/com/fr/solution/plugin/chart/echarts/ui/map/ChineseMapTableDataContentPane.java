@@ -21,10 +21,10 @@ public class ChineseMapTableDataContentPane extends AbstractTableDataContentPane
 
     public ChineseMapTableDataContentPane(ChartDataPane parent) {
         setLayout(new BorderLayout());
-        UILabel label = new UILabel("²âÊÔ²¼¾Ö");
+        UILabel label = new UILabel("æµ‹è¯•å¸ƒå±€");
         setBorder(BorderFactory.createLineBorder(Color.RED));
         add(label, BorderLayout.NORTH);
-        correlationPane = new UICorrelationPane("ÇøÓòÃû", "ÇøÓòÖµ");
+        correlationPane = new UICorrelationPane("åŒºåŸŸå", "åŒºåŸŸå€¼");
         add(correlationPane, BorderLayout.CENTER);
 
     }

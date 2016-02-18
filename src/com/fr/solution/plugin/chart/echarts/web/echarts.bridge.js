@@ -7,7 +7,7 @@ EChartsFactory = function(options, $dom) {
     this.chartID = options.chartID;
     this.autoRefreshTime = options.autoRefreshTime || 0;
 
-    this.width = options.width || $dom.width();// ²¹³ä´Ódom»ñÈ¡.
+    this.width = options.width || $dom.width();// è¡¥å……ä»domè·å–.
     this.height = options.height || $dom.height();
     this.sheetIndex = options.sheetIndex || 0;
     this.ecName = options.ecName || '';
@@ -35,7 +35,7 @@ EChartsFactory.prototype = {
 
     },
 
-    //Êı¾İ¼à¿ØµÄË¢ĞÂ·½Ê½
+    //æ•°æ®ç›‘æ§çš„åˆ·æ–°æ–¹å¼
     setData:function(options, aimation){
 
     }

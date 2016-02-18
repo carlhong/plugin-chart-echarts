@@ -22,8 +22,8 @@ public class NewTitleGlyph extends ChartGlyph {
 
     private JSONObject createTitle(Repository repo) throws JSONException {
         return JSONObject.create()
-                .put("text", "iPhoneÏúÁ¿")
-                .put("subtext", "´¿ÊôĞé¹¹")
+                .put("text", "iPhoneé”€é‡")
+                .put("subtext", "çº¯å±è™šæ„")
                 .put("x", "center");
     }
 

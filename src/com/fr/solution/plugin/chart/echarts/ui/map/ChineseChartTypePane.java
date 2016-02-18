@@ -11,9 +11,9 @@ import com.fr.solution.plugin.chart.echarts.core.map.ChineseMapPlot;
  */
 public class ChineseChartTypePane extends UserDefinedChartTypePane {
     /**
-     * 弹出框的标题
+     * 寮瑰嚭妗嗙殑鏍囬
      *
-     * @return 弹出框的标题
+     * @return 寮瑰嚭妗嗙殑鏍囬
      */
     public String title4PopupWindow() {
         return Inter.getLocText("Plugin-ECharts_Chinese_Map");
@@ -26,9 +26,9 @@ public class ChineseChartTypePane extends UserDefinedChartTypePane {
     }
 
     /**
-     * 界面是否接受
-     * @param ob 对象是否为chart
-     * @return 界面是否接受对象
+     * 鐣岄潰鏄惁鎺ュ彈
+     * @param ob 瀵硅薄鏄惁涓篶hart
+     * @return 鐣岄潰鏄惁鎺ュ彈瀵硅薄
      */
     public boolean accept(Object ob) {
         return (ob instanceof Chart)&&((Chart) ob).getPlot().accept(ChineseMapPlot.class);

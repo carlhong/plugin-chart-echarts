@@ -38,9 +38,9 @@ public class NewChart extends Chart {
     }
 
     /**
-     * 判断图表类型是否是obClass
-     * @param obClass 传入对象
-     * @return 是否是obClass对象
+     * 鍒ゆ柇鍥捐〃绫诲瀷鏄惁鏄痮bClass
+     * @param obClass 浼犲叆瀵硅薄
+     * @return 鏄惁鏄痮bClass瀵硅薄
      */
     public boolean accept(Class<? extends Chart> obClass){
         return ComparatorUtils.equals(NewChart.class, obClass);
