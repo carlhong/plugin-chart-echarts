@@ -3,13 +3,15 @@
     <id>com.fr.solution.plugin.chart.echarts</id>
     <name><![CDATA[ECharts图表]]></name>
     <active>yes</active>
-    <version>1.1</version>
+    <version>2.0</version>
     <env-version>8.0</env-version>
     <jartime>2016-01-11</jartime>
     <vendor>solution</vendor>
     <description><![CDATA[ECharts图表]]></description>
     <change-notes><![CDATA[
         <p>[2016-01-01]中国地图</p>
+        <p>[2016-02-18]饼图</p>
+
     ]]></change-notes>
     <extra-core>
         <LocaleFinder class="com.fr.solution.plugin.chart.echarts.EChartsLocaleFinder"/>
@@ -19,11 +21,15 @@
     <extra-designer/>
     <extra-platform/>
     <extra-chart>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.EChartsPie"
+                                  plotID="EChartsPiePlot"/>
         <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.ChineseMap"
                                   plotID="EChartsChinaMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.EChartsPieUI"
+                                    plotID="EChartsPiePlot"/>
         <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.ChineseMapUI"
                                     plotID="EChartsChinaMapPlot"/>
     </extra-chart-designer>

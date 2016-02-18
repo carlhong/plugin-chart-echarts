@@ -7,44 +7,44 @@ import com.fr.chart.chartattr.Plot;
 import com.fr.chart.chartglyph.PlotGlyph;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.xml.GeneralXMLTools;
-import com.fr.solution.plugin.chart.echarts.glyph.NewGlyph;
-import com.fr.solution.plugin.chart.echarts.glyph.NewLegendGlyph;
-import com.fr.solution.plugin.chart.echarts.glyph.NewTitleGlyph;
-import com.fr.solution.plugin.chart.echarts.plot.NewPlot;
-import com.fr.solution.plugin.chart.echarts.title.NewTitle;
-import com.fr.stable.xml.XMLReadable;
+import com.fr.solution.plugin.chart.echarts.glyph.EChartsGlyph;
+import com.fr.solution.plugin.chart.echarts.glyph.EChartsLegendGlyph;
+import com.fr.solution.plugin.chart.echarts.glyph.EChartsTitleGlyph;
+import com.fr.solution.plugin.chart.echarts.plot.EChartsPlot;
+import com.fr.solution.plugin.chart.echarts.title.EChartsTitle;
 import com.fr.stable.xml.XMLableReader;
 
 /**
  * Created by richie on 16/1/29.
  */
-public class NewChart extends Chart {
+public class ECharts extends Chart {
 
 
-    public NewChart() {
+    public ECharts() {
         setWrapperName("EChartsFactory");
-        setTitle(new NewTitle());
+        setTitle(new EChartsTitle());
     }
 
-    public NewChart(NewPlot plot) {
+    public ECharts(EChartsPlot plot) {
         super(plot);
         setWrapperName("EChartsFactory");
-        setTitle(new NewTitle());
+        setTitle(new EChartsTitle());
     }
 
     @Override
     public BaseChartGlyph createGlyph(ChartData chartData) {
-        NewGlyph glyph = new NewGlyph();
+        EChartsGlyph glyph = new EChartsGlyph();
         glyph.setGeneralInfo(this);
-        NewPlot newPlot = (NewPlot) getPlot();
-        if (newPlot != null) {
-            PlotGlyph plotGlyph = newPlot.createPlotGlyph(chartData);
-            NewLegendGlyph legendGlyph = newPlot.createLegendGlyph(plotGlyph);
+        EChartsPlot EChartsPlot = (EChartsPlot) getPlot();
+        if (EChartsPlot != null) {
+            PlotGlyph plotGlyph = EChartsPlot.createPlotGlyph(chartData);
+            glyph.setPlotGlyph(plotGlyph);
+            EChartsLegendGlyph legendGlyph = EChartsPlot.createLegendGlyph(plotGlyph);
             glyph.setLegendGlyph(legendGlyph);
         }
-        NewTitle title = (NewTitle)getTitle();
+        EChartsTitle title = (EChartsTitle)getTitle();
         if (title != null) {
-            NewTitleGlyph titleGlyph = title.createGlyph();
+            EChartsTitleGlyph titleGlyph = title.createGlyph();
             glyph.setTitleGlyph(titleGlyph);
         }
 
@@ -62,7 +62,7 @@ public class NewChart extends Chart {
      * @return 是否是obClass对象
      */
     public boolean accept(Class<? extends Chart> obClass){
-        return ComparatorUtils.equals(NewChart.class, obClass);
+        return ComparatorUtils.equals(ECharts.class, obClass);
     }
 
 
@@ -71,8 +71,8 @@ public class NewChart extends Chart {
         if (reader.isChildNode()) {
             String tmpNodeName = reader.getTagName();
 
-            if (tmpNodeName.equals(NewTitle.XML_TAG)) {
-                setTitle(new NewTitle());
+            if (tmpNodeName.equals(EChartsTitle.XML_TAG)) {
+                setTitle(new EChartsTitle());
                 reader.readXMLObject(getTitle());
             } else if (tmpNodeName.equals(Plot.XML_TAG)) {
                 setPlot((Plot) GeneralXMLTools.readXMLable(reader));

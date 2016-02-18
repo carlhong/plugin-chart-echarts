@@ -8,13 +8,13 @@ import com.fr.stable.web.Repository;
 /**
  * Created by richie on 16/2/2.
  */
-public class NewTitleGlyph extends TitleGlyph {
+public class EChartsTitleGlyph extends TitleGlyph {
 
-    public NewTitleGlyph() {
+    public EChartsTitleGlyph() {
 
     }
 
-    public NewTitleGlyph(String title, String subTitle) {
+    public EChartsTitleGlyph(String title, String subTitle) {
 
     }
 

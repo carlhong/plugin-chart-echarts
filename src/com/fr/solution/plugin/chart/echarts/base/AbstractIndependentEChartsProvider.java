@@ -13,4 +13,9 @@ public abstract class AbstractIndependentEChartsProvider extends AbstractIndepen
                 "/com/fr/solution/plugin/chart/echarts/web/echarts.bridge.js"
         };
     }
+
+    @Override
+    public String getWrapperName() {
+        return "EChartsFactory";
+    }
 }

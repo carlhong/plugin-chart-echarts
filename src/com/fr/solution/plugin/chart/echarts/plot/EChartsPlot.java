@@ -4,26 +4,26 @@ import com.fr.chart.chartattr.Legend;
 import com.fr.chart.chartattr.Plot;
 import com.fr.chart.chartglyph.PlotGlyph;
 import com.fr.general.ComparatorUtils;
-import com.fr.solution.plugin.chart.echarts.glyph.NewLegendGlyph;
-import com.fr.solution.plugin.chart.echarts.legend.NewLegend;
+import com.fr.solution.plugin.chart.echarts.glyph.EChartsLegendGlyph;
+import com.fr.solution.plugin.chart.echarts.legend.EChartsLegend;
 import com.fr.stable.xml.XMLableReader;
 
 /**
  * Created by richie on 16/2/2.
  */
-public abstract class NewPlot extends Plot {
+public abstract class EChartsPlot extends Plot {
 
-    public NewPlot() {
-        setLegend(new NewLegend());
+    public EChartsPlot() {
+        setLegend(new EChartsLegend());
     }
 
     public boolean accept(Class<? extends Plot> obClass) {
-        return ComparatorUtils.equals(NewPlot.class, obClass);
+        return ComparatorUtils.equals(EChartsPlot.class, obClass);
     }
 
     @Override
-    public NewLegendGlyph createLegendGlyph(PlotGlyph plotGlyph) {
-        NewLegend legend = (NewLegend) getLegend();
+    public EChartsLegendGlyph createLegendGlyph(PlotGlyph plotGlyph) {
+        EChartsLegend legend = (EChartsLegend) getLegend();
         return legend.createLegendGlyph();
     }
 
@@ -31,8 +31,8 @@ public abstract class NewPlot extends Plot {
         if (reader.isChildNode()) {
             String tagName = reader.getTagName();
 
-            if (NewLegend.XML_TAG.equals(tagName)) {
-                setLegend((Legend)reader.readXMLObject(new NewLegend()));
+            if (EChartsLegend.XML_TAG.equals(tagName)) {
+                setLegend((Legend)reader.readXMLObject(new EChartsLegend()));
             }
         }
     }

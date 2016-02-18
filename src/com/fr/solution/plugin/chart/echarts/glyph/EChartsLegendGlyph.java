@@ -9,7 +9,7 @@ import com.fr.stable.web.Repository;
 /**
  * Created by richie on 16/2/2.
  */
-public class NewLegendGlyph extends LegendGlyph {
+public class EChartsLegendGlyph extends LegendGlyph {
 
     @Override
     public JSONObject toJSONObject(Repository repo) throws JSONException {
