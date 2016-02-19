@@ -40,7 +40,7 @@
 
 // 该方法用于描述图表类型选择界面(一种图表还会有若干种子类型,所以需要这个界面)
 
-`public AbstractChartTypePane getPlotTypePane()`
+[`public AbstractChartTypePane getPlotTypePane()`](document/echarts_type_pane.md)
 
 // 该方法用于描述此种图表类型的使用数据集数据时的数据设置界面
 

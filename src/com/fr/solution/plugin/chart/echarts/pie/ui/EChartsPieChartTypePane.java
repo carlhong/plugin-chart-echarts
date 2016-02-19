@@ -33,7 +33,7 @@ public class EChartsPieChartTypePane extends AbstractEChartsTypePane {
      * @return 界面是否接受对象
      */
     public boolean accept(Object ob) {
-        return (ob instanceof Chart) && ((Chart) ob).getPlot().accept(EChartsPiePlot.class);
+        return (ob instanceof ECharts) && ((ECharts) ob).getPlot().accept(EChartsPiePlot.class);
     }
 
     @Override

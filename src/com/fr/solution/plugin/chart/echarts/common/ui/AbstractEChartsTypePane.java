@@ -8,6 +8,7 @@ import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
 import com.fr.design.mainframe.chart.gui.type.ChartImagePane;
 import com.fr.general.FRLogger;
 import com.fr.solution.plugin.chart.echarts.common.base.ECharts;
+import com.fr.stable.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,7 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
 
     @Override
     protected String[] getTypeLayoutPath() {
-        return new String[]{
-        };
+         return ArrayUtils.EMPTY_STRING_ARRAY;
     }
 
     @Override
@@ -31,16 +31,31 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
         return getIconsOfTypes();
     }
 
+    /**
+     * 各种图表子类型的图标,需要和图表的字类型数量一致
+     * @return 子类型图标的集合
+     */
     public abstract String[] getIconsOfTypes();
 
     /**
-     * 不同字类型图表的名字
-     * @return 名字
+     * 各种图表子类型的名字,需要和图表的字类型数量一致
+     * @return 子类型的名字的集合
      */
     public abstract String[] getNamesOfTypes();
 
 
+    /**
+     * 返回选择的图表子类型
+     * @return 图表类型
+     */
     public abstract Plot getSelectedClonedPlot();
+
+    /**
+     * 该选择界面能接收的图表类型
+     * @param ob 待判断的对象
+     * @return 如果该选择界面能接收,则返回true,否则返回false
+     */
+    public abstract boolean accept(Object ob);
 
     @Override
     protected List<ChartImagePane> initDemoList() {
@@ -73,10 +88,6 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
         }
     }
 
-    public boolean accept(Object ob) {
-        return ob instanceof ECharts;
-    }
-
     protected void checkTypeChange(){
         for(int i = 0; i < typeDemo.size(); i++){
             if(typeDemo.get(i).isPressing && i != lastTypeIndex){
@@ -98,12 +109,6 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
             }
         } catch (CloneNotSupportedException e) {
             FRLogger.getLogger().error(e.getMessage(), e);
-        }
-    }
-
-    protected void cloneOldConditionCollection(Plot oldPlot, Plot newPlot) throws CloneNotSupportedException{
-        if (oldPlot.getConditionCollection() != null) {
-            newPlot.setConditionCollection((ConditionCollection)oldPlot.getConditionCollection().clone());
         }
     }
 }
