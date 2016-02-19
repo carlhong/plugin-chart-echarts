@@ -5,6 +5,7 @@
 1. `IndependentChartProvider`
 
 介绍:该接口的作用是扩展图表类型引擎部分,一般继承`AbstractIndependentEChartsProvider`就可以了
+
 2. `IndependentChartUIProvider`
 
 介绍:该接口的作用是扩展图表类型的设计器部分,一般继承`AbstractIndependentEChartsUI`就可以了
