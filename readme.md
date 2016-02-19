@@ -17,27 +17,35 @@
 ### 继承了AbstractIndependentEChartsProvider的类需要实现以下方法
 
 // 该方法用于描述图表的名字
+
 `public String getChartName()`
 
 // 该方法用于描述图表的显示名字,会根据不同的语言设置显示不同的名字
+
 `public String getChartUseName()`
 
 // 该方法用户描述图表的子类型
+
 `public Chart[] getChartTypes()`
 
 // 该方法用于描述图表对应的图片,一般在设计界面和图表选择界面会看到该图片
+
 `public String getChartImagePath()`
 
 ### 继承了AbstractIndependentEChartsUI的类需要实现以下方法
 
 // 该方法用于描述图表类型选择界面(一种图表还会有若干种子类型,所以需要这个界面)
+
 `public AbstractChartTypePane getPlotTypePane()`
 
 // 该方法用于描述此种图表类型的使用数据集数据时的数据设置界面
+
 `public AbstractTableDataContentPane getTableDataSourcePane(Plot plot, ChartDataPane parent)`
 
 // 该方法用于描述此种图表类型的使用单元格数据时的数据设置界面
+
 `public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent)`
 
 // 该方法用户描述此种类型的图表的小图标,一般在添加表单元素的选择界面可以看到
+
 `public String getIconPath()`
