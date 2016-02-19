@@ -1,7 +1,7 @@
 # ECharts插件使用效果和开发文档
 
 ## 开发文档
-[详细开发文档点击这里查看](document/charts_develop.md)
+[详细开发文档点击这里查看](document/echarts_develop.md)
 
 ## 试用效果图
 注意:为了对比,需要安装图表(新特性)插件
