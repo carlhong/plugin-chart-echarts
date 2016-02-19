@@ -11,26 +11,25 @@
     <change-notes><![CDATA[
         <p>[2016-01-01]中国地图</p>
         <p>[2016-02-18]饼图</p>
-
     ]]></change-notes>
     <extra-core>
-        <LocaleFinder class="com.fr.solution.plugin.chart.echarts.EChartsLocaleFinder"/>
-        <JavaScriptFileHandler class="com.fr.solution.plugin.chart.echarts.EChartsFileLoader"/>
+        <LocaleFinder class="com.fr.solution.plugin.chart.echarts.common.EChartsLocaleFinder"/>
+        <JavaScriptFileHandler class="com.fr.solution.plugin.chart.echarts.common.EChartsFileLoader"/>
     </extra-core>
     <extra-report/>
     <extra-designer/>
     <extra-platform/>
     <extra-chart>
-        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.EChartsPie"
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPie"
                                   plotID="EChartsPiePlot"/>
-        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.ChineseMap"
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.map.ChineseMap"
                                   plotID="EChartsChinaMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
-        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.EChartsPieUI"
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPieUI"
                                     plotID="EChartsPiePlot"/>
-        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.ChineseMapUI"
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.map.ChineseMapUI"
                                     plotID="EChartsChinaMapPlot"/>
     </extra-chart-designer>
 </plugin>
