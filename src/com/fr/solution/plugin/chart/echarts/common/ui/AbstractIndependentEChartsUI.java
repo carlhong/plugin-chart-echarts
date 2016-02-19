@@ -3,6 +3,7 @@ package com.fr.solution.plugin.chart.echarts.common.ui;
 import com.fr.design.chart.fun.impl.AbstractIndependentChartUI;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.mainframe.chart.AbstractChartAttrPane;
+import com.fr.design.mainframe.chart.gui.type.AbstractChartTypePane;
 
 /**
  * Created by richie on 16/2/18.
