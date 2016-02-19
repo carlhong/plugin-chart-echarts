@@ -1,6 +1,6 @@
 # AbstractEChartsTypePane子类介绍
 
-具有子类型的图表,都需要继承该类以实现各种子类型选择以及切换.
+具有子类型的图表,都需要继承该类以实现各种子类型选择以及切换.具体实现可以参考`EChartsPieChartTypePane`.
 
 需要实现几个重要的方法
 
@@ -25,4 +25,5 @@
 `public String[] getIconsOfTypes()`
 
 // 图表各种子类型的名字
+
 `public String[] getNamesOfTypes()`
