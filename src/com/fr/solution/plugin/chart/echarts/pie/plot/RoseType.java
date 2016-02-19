@@ -5,13 +5,13 @@ import com.fr.general.ComparatorUtils;
 /**
  * Created by richie on 16/2/18.
  */
-public enum PieType {
+public enum RoseType {
 
-    REGULAR("regular"), CIRCLE("circle");
+    NONE("none"), AREA("area"), RADIUS("radius");
 
     private String type;
 
-    PieType(String type) {
+    RoseType(String type) {
         this.type = type;
     }
 
@@ -19,22 +19,22 @@ public enum PieType {
         return type;
     }
 
-    private static PieType[] positions;
+    private static RoseType[] positions;
 
     /**
      * 将字符串转换成枚举类型
      * @param p 待转换的整数
      * @return 枚举
      */
-    public static PieType parse(String p) {
+    public static RoseType parse(String p) {
         if (positions == null) {
-            positions = PieType.values();
+            positions = RoseType.values();
         }
-        for (PieType ip : positions) {
+        for (RoseType ip : positions) {
             if (ComparatorUtils.equals(p, ip.type)) {
                 return ip;
             }
         }
-        return REGULAR;
+        return NONE;
     }
 }

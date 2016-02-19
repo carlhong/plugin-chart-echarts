@@ -7,12 +7,24 @@ import com.fr.json.JSONException;
 import com.fr.json.JSONFunction;
 import com.fr.json.JSONObject;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsPlotGlyph;
+import com.fr.solution.plugin.chart.echarts.pie.plot.RoseType;
 import com.fr.stable.web.Repository;
 
 /**
  * Created by richie on 16/2/18.
  */
 public class EChartsPiePlotGlyph extends EChartsPlotGlyph {
+
+    private RoseType roseType;
+
+    public EChartsPiePlotGlyph() {
+        this(RoseType.NONE);
+    }
+
+    public EChartsPiePlotGlyph(RoseType roseType) {
+        this.roseType = roseType;
+    }
+
     @Override
     public String getPlotGlyphType() {
         return "EChartsPiePlotGlyph";
@@ -28,6 +40,7 @@ public class EChartsPiePlotGlyph extends EChartsPlotGlyph {
         JSONObject wrapper = JSONObject.create();
         result.put(wrapper);
         wrapper.put("type", "pie");
+        wrapper.put("roseType", roseType.toTypeString());
         wrapper.put("itemStyle",
                 JSONObject.create().put("normal",
                         JSONObject.create().put("label",
@@ -39,7 +52,6 @@ public class EChartsPiePlotGlyph extends EChartsPlotGlyph {
             String name = series.getSeriesName();
             JSONObject item = JSONObject.create();
             data.put(item);
-
             item.put("name", name);
             if (series.getDataPointCount() > 0) {
                 DataPoint dataPoint = series.getDataPoint(0);

@@ -5,21 +5,22 @@ import com.fr.general.Inter;
 import com.fr.solution.plugin.chart.echarts.common.base.AbstractIndependentEChartsProvider;
 import com.fr.solution.plugin.chart.echarts.common.base.ECharts;
 import com.fr.solution.plugin.chart.echarts.pie.plot.EChartsPiePlot;
-import com.fr.solution.plugin.chart.echarts.pie.plot.PieType;
+import com.fr.solution.plugin.chart.echarts.pie.plot.RoseType;
 
 /**
  * Created by richie on 16/2/18.
  */
 public class EChartsPie extends AbstractIndependentEChartsProvider {
 
-    private static ECharts createPie(PieType type) {
+    private static ECharts createPie(RoseType type) {
         EChartsPiePlot plot = new EChartsPiePlot(type);
         return new ECharts(plot);
     }
 
     public static ECharts[] charts = new ECharts[] {
-            createPie(PieType.REGULAR),
-            createPie(PieType.CIRCLE)
+            createPie(RoseType.NONE),
+            createPie(RoseType.AREA),
+            createPie(RoseType.RADIUS),
     };
 
 

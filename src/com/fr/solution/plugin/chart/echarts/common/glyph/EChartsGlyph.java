@@ -24,7 +24,6 @@ public class EChartsGlyph extends ChartGlyph {
         if (legendGlyph != null) {
             jo.put("legend", legendGlyph.toJSONObject(repo));
         }
-        //jo.put("dataRange", createDataRange(repo));
         EChartsPlotGlyph plotGlyph = (EChartsPlotGlyph) getPlotGlyph();
         if (plotGlyph != null) {
             jo.put("series", plotGlyph.toSeriesData(repo));
@@ -36,15 +35,5 @@ public class EChartsGlyph extends ChartGlyph {
     private JSONObject createTooltip(Repository repo) throws JSONException {
         return JSONObject.create()
                 .put("trigger", "item");
-    }
-
-
-    private JSONObject createDataRange(Repository repo) throws JSONException {
-        return JSONObject.create()
-                .put("min", 0)
-                .put("max", 2500)
-                .put("x", "left")
-                .put("y", "bottom")
-                .put("text", JSONArray.create().put("高").put("低"));
     }
 }

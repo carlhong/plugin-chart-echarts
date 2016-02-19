@@ -20,23 +20,23 @@ import com.fr.stable.xml.XMLableReader;
 public class EChartsPiePlot extends EChartsPlot {
 
 
-    private PieType pieType;
+    private RoseType pieType;
 
     public EChartsPiePlot() {
-        this(PieType.REGULAR);
+        this(RoseType.NONE);
     }
 
-    public EChartsPiePlot(PieType pieType) {
+    public EChartsPiePlot(RoseType pieType) {
         this.pieType = pieType;
     }
 
-    public void setPieType(PieType pieType) {
-        this.pieType = pieType;
+    public RoseType getPieType() {
+        return pieType;
     }
 
     @Override
     public PlotGlyph createPlotGlyph(ChartData chartData) {
-        PlotGlyph glyph = new EChartsPiePlotGlyph();
+        PlotGlyph glyph = new EChartsPiePlotGlyph(pieType );
         install4PlotGlyph(glyph, chartData);
         return glyph;
     }
@@ -76,7 +76,7 @@ public class EChartsPiePlot extends EChartsPlot {
             String tagName = reader.getTagName();
 
             if (tagName.equals("PieAttr4ECharts")) {
-                pieType = PieType.parse(reader.getAttrAsString("pieType", StringUtils.EMPTY));
+                pieType = RoseType.parse(reader.getAttrAsString("pieType", StringUtils.EMPTY));
             }
         }
     }
@@ -95,5 +95,12 @@ public class EChartsPiePlot extends EChartsPlot {
         return ob instanceof EChartsPiePlot
                 && super.equals(ob)
                 && ComparatorUtils.equals(((EChartsPiePlot) ob).pieType, pieType);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        EChartsPiePlot cloned = (EChartsPiePlot) super.clone();
+        cloned.pieType = pieType;
+        return cloned;
     }
 }

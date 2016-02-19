@@ -24,6 +24,10 @@ public abstract class EChartsPlot extends Plot {
     @Override
     public EChartsLegendGlyph createLegendGlyph(PlotGlyph plotGlyph) {
         EChartsLegend legend = (EChartsLegend) getLegend();
+        if (legend == null) {
+            legend = new EChartsLegend();
+            setLegend(legend);
+        }
         return legend.createLegendGlyph(createLegendItems(plotGlyph));
     }
 
