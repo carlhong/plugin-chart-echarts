@@ -61,7 +61,7 @@
                executable="${compile_jdk_version}/bin/javac">
             <src path="${basedir}/src"/>
             <exclude name="**/.svn/**"/>
-            <compilerarg line="-encoding GBK "/>
+            <compilerarg line="-encoding UTF8 "/>
             <classpath refid="compile.classpath"/>
         </javac>
     </target>
