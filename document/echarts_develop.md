@@ -53,3 +53,9 @@
 // 该方法用户描述此种类型的图表的小图标,一般在添加表单元素的选择界面可以看到
 
 `public String getIconPath()`
+
+### 所有新加的实现了XMLAble接口或者其子类的类,都必须要实现相等的判断方法,否者界面设计变化时无法正确检测到属性变化
+
+`public boolean equals(Object ob)`
+
+例如:ECharts,EChartsTooltip等
