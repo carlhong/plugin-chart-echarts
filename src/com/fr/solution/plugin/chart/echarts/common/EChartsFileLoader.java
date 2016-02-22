@@ -10,6 +10,7 @@ public class EChartsFileLoader extends AbstractJavaScriptFileHandler {
     @Override
     public String[] pathsForFiles() {
         return new String[]{
+                "/com/fr/solution/plugin/chart/echarts/common/web/echarts.loader.js",
                 "/com/fr/solution/plugin/chart/echarts/common/web/lib/echarts-all.js"
         };
     }

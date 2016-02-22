@@ -9,6 +9,7 @@ import com.fr.design.event.UIObserverListener;
 import com.fr.design.gui.frpane.AttributeChangeListener;
 import com.fr.design.mainframe.chart.AbstractChartAttrPane;
 import com.fr.design.mainframe.chart.PaneTitleConstants;
+import com.fr.general.Inter;
 import com.fr.solution.plugin.chart.echarts.common.base.ECharts;
 
 import javax.swing.*;
@@ -23,6 +24,8 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
 
     private EChartsTitlePane titlePane;
     private BasicPane tooltipPane;
+    private BasicPane themePane;
+    private BasicPane legendPane;
 
     private AttributeChangeListener listener;
     private UIObserverListener uiObserverListener;
@@ -39,7 +42,19 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
         tooltipPane = new BasicPane() {
             @Override
             protected String title4PopupWindow() {
-                return "Tooltip";
+                return Inter.getLocText("Plugin-ECharts_Tooltip");
+            }
+        };
+        themePane = new BasicPane() {
+            @Override
+            protected String title4PopupWindow() {
+                return Inter.getLocText("Plugin-ECharts_Theme");
+            }
+        };
+        legendPane = new BasicPane() {
+            @Override
+            protected String title4PopupWindow() {
+                return Inter.getLocText("Plugin-ECharts_Legend");
             }
         };
     }
@@ -156,6 +171,10 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
              */
             if (chosenPane == tooltipPane) {
                 chosenPane = new EChartsTooltipPane(EChartsStylePane.this);
+            } else if (chosenPane == themePane) {
+                chosenPane = new EChartsThemePane(EChartsStylePane.this);
+            } else if (chosenPane == legendPane) {
+                chosenPane = new EChartsLegendPane(EChartsStylePane.this);
             }
 
             initSelfListener(chosenPane);
@@ -175,6 +194,8 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
             java.util.List<BasicPane> paneList = new ArrayList<BasicPane>();
             paneList.add(titlePane);
             paneList.add(tooltipPane);
+            paneList.add(themePane);
+            paneList.add(legendPane);
             return paneList;
         }
 
@@ -197,7 +218,8 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
 
         @Override
         public void updateBean(ECharts ob) {
-            ((BasicBeanPane<ECharts>) paneList.get(kindOfTabPane.getSelectedIndex())).updateBean(ob);
+            BasicBeanPane<ECharts> pane = ((BasicBeanPane<ECharts>) paneList.get(kindOfTabPane.getSelectedIndex()));
+            pane.updateBean(ob);
         }
 
         @Override

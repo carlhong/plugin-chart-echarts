@@ -16,7 +16,9 @@ import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsLegendGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsTitleGlyph;
 import com.fr.solution.plugin.chart.echarts.common.plot.EChartsPlot;
+import com.fr.solution.plugin.chart.echarts.common.theme.EChartsTheme;
 import com.fr.solution.plugin.chart.echarts.common.title.EChartsTitle;
+import com.fr.solution.plugin.chart.echarts.common.tooltip.EChartsTooltip;
 import com.fr.stable.xml.XMLPrintWriter;
 import com.fr.stable.xml.XMLReadable;
 import com.fr.stable.xml.XMLableReader;
@@ -26,16 +28,35 @@ import com.fr.stable.xml.XMLableReader;
  */
 public class ECharts extends Chart {
 
+    private EChartsTheme theme;
+    private EChartsTooltip tooltip;
+
 
     public ECharts() {
-        setWrapperName("EChartsFactory");
-        setTitle(new EChartsTitle());
+        this(null);
     }
 
     public ECharts(EChartsPlot plot) {
         super(plot);
         setWrapperName("EChartsFactory");
         setTitle(new EChartsTitle());
+        setTooltip(new EChartsTooltip());
+    }
+
+    public EChartsTheme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(EChartsTheme theme) {
+        this.theme = theme;
+    }
+
+    public EChartsTooltip getTooltip() {
+        return tooltip;
+    }
+
+    public void setTooltip(EChartsTooltip tooltip) {
+        this.tooltip = tooltip;
     }
 
     @Override
@@ -59,6 +80,13 @@ public class ECharts extends Chart {
         glyph.setChartImagePath(getImagePath());
         glyph.setRequiredJS(getRequiredJS());
         glyph.setJSDraw(isJSDraw());
+
+        if (theme != null) {
+            glyph.setTheme(theme);
+        }
+        if (tooltip != null) {
+            glyph.setTooltip(tooltip);
+        }
 
         return glyph;
     }
@@ -92,6 +120,10 @@ public class ECharts extends Chart {
                         setFilterDefinition(readDefinition(reader));
                     }
                 });
+            } else if (tmpNodeName.equals(EChartsTheme.XML_TAG)) {
+                theme = (EChartsTheme) GeneralXMLTools.readXMLable(reader);
+            } else if (tmpNodeName.equals(EChartsTooltip.XML_TAG)) {
+                tooltip = (EChartsTooltip) GeneralXMLTools.readXMLable(reader);
             }
         }
     }
@@ -118,5 +150,19 @@ public class ECharts extends Chart {
     @Override
     public void writeXML(XMLPrintWriter writer) {
         super.writeXML(writer);
+        if (theme != null) {
+            GeneralXMLTools.writeXMLable(writer, theme, EChartsTheme.XML_TAG);
+        }
+        if (tooltip != null) {
+            GeneralXMLTools.writeXMLable(writer, tooltip, EChartsTooltip.XML_TAG);
+        }
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        return ob instanceof ECharts
+                && super.equals(ob)
+                && ComparatorUtils.equals(theme, ((ECharts) ob).theme)
+                && ComparatorUtils.equals(tooltip, ((ECharts) ob).tooltip);
     }
 }

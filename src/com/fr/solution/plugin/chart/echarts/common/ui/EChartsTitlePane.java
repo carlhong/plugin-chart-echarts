@@ -1,7 +1,6 @@
 package com.fr.solution.plugin.chart.echarts.common.ui;
 
 import com.fr.base.Formula;
-import com.fr.base.Utils;
 import com.fr.design.dialog.BasicScrollPane;
 import com.fr.design.formula.TinyFormulaPane;
 import com.fr.design.gui.ibutton.UIButtonGroup;
@@ -9,6 +8,7 @@ import com.fr.design.gui.ilable.UILabel;
 import com.fr.design.layout.TableLayout;
 import com.fr.design.layout.TableLayoutHelper;
 import com.fr.general.GeneralUtils;
+import com.fr.general.Inter;
 import com.fr.solution.plugin.chart.echarts.common.base.ECharts;
 import com.fr.solution.plugin.chart.echarts.common.title.EChartsTitle;
 import com.fr.stable.StableUtils;
@@ -38,12 +38,16 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
         double f = TableLayout.FILL;
         double[] rowSize = {p, p};
         double[] columnSize = {p, f};
-        showTitle = new UIButtonGroup<Boolean>(new String[]{"显示", "不显示"}, new Boolean[]{true, false});
+        showTitle = new UIButtonGroup<Boolean>(
+                new String[]{
+                        Inter.getLocText("Plugin-ECharts_Title_Show"),
+                        Inter.getLocText("Plugin-ECharts_Title_Not_Show")},
+                new Boolean[]{true, false});
         showTitle.setSelectedIndex(0);
         tinyFormulaPane = new TinyFormulaPane();
         JPanel cen = TableLayoutHelper.createTableLayoutPane(new Component[][]{
-                {new UILabel("显示标题"), showTitle},
-                {new UILabel("标题内容"), tinyFormulaPane}
+                {new UILabel(Inter.getLocText("Plugin-ECharts_Title_Show_Label")), showTitle},
+                {new UILabel(Inter.getLocText("Plugin-ECharts_Title_Content")), tinyFormulaPane}
         }, rowSize, columnSize);
         panel.add(cen, BorderLayout.CENTER);
         return panel;
@@ -55,7 +59,7 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
         if (title == null) {
             return;
         }
-        showTitle.setSelectedItem(title.isTitleVisble());
+        showTitle.setSelectedItem(title.isTitleVisible());
         if (title.getTextObject() instanceof Formula) {
             tinyFormulaPane.populateBean(((Formula) title.getTextObject()).getContent());
         } else {
@@ -72,7 +76,7 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
         if (title == null) {
             title = new EChartsTitle();
         }
-        title.setTitleVisble(showTitle.getSelectedItem());
+        title.setTitleVisible(showTitle.getSelectedItem());
         String titleString = tinyFormulaPane.updateBean();
         Object titleObj;
         if (StableUtils.maybeFormula(titleString)) {
@@ -85,6 +89,6 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
 
     @Override
     protected String title4PopupWindow() {
-        return "Title";
+        return Inter.getLocText("Plugin-ECharts_Title");
     }
 }

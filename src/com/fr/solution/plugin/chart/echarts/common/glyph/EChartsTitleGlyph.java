@@ -21,8 +21,10 @@ public class EChartsTitleGlyph extends TitleGlyph {
     }
 
     private JSONObject createTitle(Repository repo) throws JSONException {
-        return JSONObject.create()
+        JSONObject t = JSONObject.create()
                 .put("text", getText())
                 .put("x", "center");
+
+        return t;
     }
 }
