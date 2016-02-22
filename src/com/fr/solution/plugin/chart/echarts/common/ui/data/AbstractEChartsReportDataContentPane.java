@@ -1,5 +1,6 @@
 package com.fr.solution.plugin.chart.echarts.common.ui.data;
 
+import com.fr.design.mainframe.chart.gui.ChartDataPane;
 import com.fr.design.mainframe.chart.gui.data.report.CategoryPlotReportDataContentPane;
 
 /**
@@ -7,4 +8,7 @@ import com.fr.design.mainframe.chart.gui.data.report.CategoryPlotReportDataConte
  */
 public class AbstractEChartsReportDataContentPane extends CategoryPlotReportDataContentPane {
 
+    public AbstractEChartsReportDataContentPane(ChartDataPane parent) {
+        super(parent);
+    }
 }

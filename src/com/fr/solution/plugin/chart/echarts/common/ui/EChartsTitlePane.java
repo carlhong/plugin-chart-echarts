@@ -72,10 +72,8 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
         if (ob == null) {
             ob = new ECharts();
         }
-        EChartsTitle title = (EChartsTitle) ob.getTitle();
-        if (title == null) {
-            title = new EChartsTitle();
-        }
+        EChartsTitle title = new EChartsTitle();
+        ob.setTitle(title);
         title.setTitleVisible(showTitle.getSelectedItem());
         String titleString = tinyFormulaPane.updateBean();
         Object titleObj;

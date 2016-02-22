@@ -24,7 +24,7 @@ public class EChartsTitleGlyph extends TitleGlyph {
         JSONObject t = JSONObject.create()
                 .put("text", getText())
                 .put("x", "center");
-
+        t.put("show", isVisible());
         return t;
     }
 }

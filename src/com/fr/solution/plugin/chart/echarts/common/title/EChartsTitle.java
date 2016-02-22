@@ -4,6 +4,7 @@ import com.fr.base.Formula;
 import com.fr.base.Utils;
 import com.fr.chart.chartattr.Title;
 import com.fr.general.GeneralUtils;
+import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsTitleGlyph;
 import com.fr.stable.xml.XMLPrintWriter;
 import com.fr.stable.xml.XMLableReader;
@@ -27,7 +28,9 @@ public class EChartsTitle extends Title {
         } else {
             text4Glyph = GeneralUtils.objectToString(text);
         }
-        return new EChartsTitleGlyph(text4Glyph);
+        EChartsTitleGlyph titleGlyph = new EChartsTitleGlyph(text4Glyph);
+        titleGlyph.setVisible(isTitleVisible());
+        return titleGlyph;
     }
 
     @Override

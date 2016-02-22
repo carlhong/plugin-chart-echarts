@@ -27,7 +27,7 @@ public class EChartsPieUI extends AbstractIndependentEChartsUI {
 
     @Override
     public AbstractReportDataContentPane getReportDataSourcePane(Plot plot, ChartDataPane parent) {
-        return new EChartsPieReportDataContentPane();
+        return new EChartsPieReportDataContentPane(parent);
     }
 
     @Override
