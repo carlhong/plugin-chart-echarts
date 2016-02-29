@@ -5,11 +5,11 @@
     <active>yes</active>
     <version>2.0</version>
     <env-version>8.0</env-version>
-    <jartime>2016-02-18</jartime>
+    <jartime>2016-02-22</jartime>
     <vendor email="solution@finereport.com">solution</vendor>
     <description><![CDATA[ECharts图表,源码和效果图可查看<a href="http://www.finedevelop.com:2015/projects/FS/repos/plugin-echarts-public">这里</a>.]]></description>
     <change-notes><![CDATA[
-        <p>[2016-02-18]饼图</p>
+        <p>[2016-02-18]饼图(支持多分类饼图)</p>
     ]]></change-notes>
     <extra-core>
         <LocaleFinder class="com.fr.solution.plugin.chart.echarts.common.EChartsLocaleFinder"/>
