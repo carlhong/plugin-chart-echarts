@@ -30,11 +30,6 @@ public class EChartsPie extends AbstractIndependentEChartsProvider {
     }
 
     @Override
-    public String getChartUseName() {
-        return Inter.getLocText("Plugin-ECharts_Pie");
-    }
-
-    @Override
     public Chart[] getChartTypes() {
         return charts;
     }

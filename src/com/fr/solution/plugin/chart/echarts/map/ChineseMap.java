@@ -27,11 +27,6 @@ public class ChineseMap extends AbstractIndependentEChartsProvider {
     }
 
     @Override
-    public String getChartUseName() {
-        return Inter.getLocText("Plugin-ECharts_Chinese_Map");
-    }
-
-    @Override
     public Chart[] getChartTypes() {
         return charts;
     }
