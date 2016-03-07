@@ -25,6 +25,11 @@ public class ChineseChartTypePane extends UserDefinedChartTypePane {
         }
     }
 
+    @Override
+    protected String getPlotTypeID() {
+        return null;
+    }
+
     /**
      * 界面是否接受
      * @param ob 对象是否为chart

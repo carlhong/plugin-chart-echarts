@@ -55,6 +55,21 @@ public class EChartsPieChartTypePane extends AbstractEChartsTypePane {
     }
 
     @Override
+    protected String getPlotTypeID() {
+        return EChartsPiePlot.PLOT_ID;
+    }
+
+    @Override
+    protected String[] getTypeTipName() {
+        return getNamesOfTypes();
+    }
+
+    @Override
+    protected String[] getTypeLayoutTipName() {
+        return getNamesOfTypes();
+    }
+
+    @Override
     public Plot getSelectedClonedPlot() {
         EChartsPiePlot newPlot = null;
         Chart[] pieChart = EChartsPie.charts;

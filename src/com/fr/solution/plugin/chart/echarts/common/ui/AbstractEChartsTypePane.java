@@ -17,11 +17,6 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
     private static final long serialVersionUID = 7743244512351499265L;
 
     @Override
-    protected List<ChartImagePane> initStyleList() {
-        return new ArrayList<ChartImagePane>();
-    }
-
-    @Override
     protected String[] getTypeLayoutPath() {
          return ArrayUtils.EMPTY_STRING_ARRAY;
     }
@@ -56,19 +51,6 @@ public abstract class AbstractEChartsTypePane extends AbstractChartTypePane{
      * @return 如果该选择界面能接收,则返回true,否则返回false
      */
     public abstract boolean accept(Object ob);
-
-    @Override
-    protected List<ChartImagePane> initDemoList() {
-        List <ChartImagePane> demoList = new ArrayList<ChartImagePane>();
-        String[] iconPaths = getTypeIconPath();
-        String[] names = getNamesOfTypes();
-        ChartImagePane pane = new ChartImagePane(iconPaths[0], names[0]);
-        pane.isPressing = true;
-        demoList.add(pane);
-        demoList.add(new ChartImagePane(iconPaths[1], names[1]));
-        demoList.add(new ChartImagePane(iconPaths[2], names[2]));
-        return demoList;
-    }
 
     /**
      * 保存界面属性

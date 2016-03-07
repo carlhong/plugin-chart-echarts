@@ -19,6 +19,8 @@ import com.fr.stable.xml.XMLableReader;
  */
 public class EChartsPiePlot extends EChartsPlot {
 
+    public static final String PLOT_ID = "EChartsPiePlot";
+
 
     private RoseType pieType;
 
@@ -43,7 +45,7 @@ public class EChartsPiePlot extends EChartsPlot {
 
     @Override
     public String getPlotID() {
-        return "EChartsPiePlot";
+        return PLOT_ID;
     }
 
     @Override
