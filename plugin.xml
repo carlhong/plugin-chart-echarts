@@ -3,11 +3,11 @@
     <id>com.fr.solution.plugin.chart.echarts</id>
     <name><![CDATA[ECharts图表]]></name>
     <active>yes</active>
-    <version>2.1</version>
+    <version>2.2</version>
     <env-version>8.0</env-version>
-    <jartime>2016-02-22</jartime>
+    <jartime>2016-03-10</jartime>
     <vendor email="solution@finereport.com">solution</vendor>
-    <description><![CDATA[ECharts图表,源码和效果图可查看<a href="http://www.finedevelop.com:2015/projects/FS/repos/plugin-echarts-public">这里</a>.]]></description>
+    <description><![CDATA[ECharts图表，源码和效果图可查看<a href="http://www.finedevelop.com:2015/projects/FS/repos/plugin-echarts-public">这里</a>。如果有其他类型的图表开发需求，可以联系solution@finereport.com。]]></description>
     <change-notes><![CDATA[
         <p>[2016-02-18]饼图(支持多分类饼图)</p>
         <p>[2016-03-03]增加国际化支持(美国英语)</p>
@@ -22,14 +22,10 @@
     <extra-chart>
         <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPie"
                                   plotID="EChartsPiePlot"/>
-        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.map.ChineseMap"
-                                  plotID="EChartsChinaMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
         <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPieUI"
                                     plotID="EChartsPiePlot"/>
-        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.map.ChineseMapUI"
-                                    plotID="EChartsChinaMapPlot"/>
     </extra-chart-designer>
 </plugin>
