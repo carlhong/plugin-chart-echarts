@@ -18,4 +18,9 @@ public abstract class AbstractIndependentEChartsProvider extends AbstractIndepen
     public String getWrapperName() {
         return "EChartsFactory";
     }
+
+    @Override
+    public int currentAPILevel() {
+        return CURRENT_API_LEVEL;
+    }
 }

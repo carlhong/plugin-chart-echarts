@@ -22,4 +22,9 @@ public abstract class AbstractIndependentEChartsUI extends AbstractIndependentCh
         }
         return new AbstractChartAttrPane[]{stylePane};
     }
+
+    @Override
+    public int currentAPILevel() {
+        return CURRENT_API_LEVEL;
+    }
 }
