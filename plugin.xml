@@ -3,7 +3,7 @@
     <id>com.fr.solution.plugin.chart.echarts</id>
     <name><![CDATA[ECharts图表]]></name>
     <active>yes</active>
-    <version>3.0</version>
+    <version>3.1</version>
     <env-version>8.0</env-version>
     <jartime>2016-05-28</jartime>
     <vendor email="solution@finereport.com">solution</vendor>
@@ -12,6 +12,7 @@
         <p>[2016-02-18]饼图(支持多分类饼图)</p>
         <p>[2016-03-03]增加国际化支持(美国英语)</p>
         <p>[2016-05-28]兼容最新的API升级</p>
+        <p>[2016-06-29]升级API等级,重新打包</p>
     ]]></change-notes>
     <extra-core>
         <LocaleFinder class="com.fr.solution.plugin.chart.echarts.common.EChartsLocaleFinder"/>
