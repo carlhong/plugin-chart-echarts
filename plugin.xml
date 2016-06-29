@@ -3,7 +3,7 @@
     <id>com.fr.solution.plugin.chart.echarts</id>
     <name><![CDATA[ECharts图表]]></name>
     <active>yes</active>
-    <version>2.3</version>
+    <version>3.0</version>
     <env-version>8.0</env-version>
     <jartime>2016-05-28</jartime>
     <vendor email="solution@finereport.com">solution</vendor>
