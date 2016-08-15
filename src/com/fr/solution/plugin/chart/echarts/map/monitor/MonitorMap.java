@@ -15,9 +15,19 @@ public class MonitorMap extends AbstractFunctionProcessor {
         return instance;
     }
 
+    private MonitorMap() {
+        super();
+    }
+
+
     @Override
     public int getId() {
         return FunctionHelper.generateFunctionID("com.fr.solution.plugin.chart.echarts");
+    }
+
+    @Override
+    public String getLocaleKey() {
+        return "Plugin-ECharts_Chinese_Map";
     }
 
     @Override

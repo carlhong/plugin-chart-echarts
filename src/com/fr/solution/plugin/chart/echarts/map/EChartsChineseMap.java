@@ -9,7 +9,7 @@ import com.fr.solution.plugin.chart.echarts.map.plot.ChineseMapPlot;
 /**
  * Created by richie on 16/1/29.
  */
-public class ChineseMap extends AbstractIndependentEChartsProvider {
+public class EChartsChineseMap extends AbstractIndependentEChartsProvider {
 
     private static ECharts createChineseMap() {
         ChineseMapPlot plot = new ChineseMapPlot();

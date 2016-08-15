@@ -21,6 +21,11 @@ public class MonitorPie extends AbstractFunctionProcessor {
     }
 
     @Override
+    public String getLocaleKey() {
+        return "Plugin-ECharts_Pie";
+    }
+
+    @Override
     public String toString() {
         return Inter.getLocText("Plugin-ECharts_Pie");
     }

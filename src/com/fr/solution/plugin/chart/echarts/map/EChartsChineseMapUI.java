@@ -13,7 +13,7 @@ import com.fr.solution.plugin.chart.echarts.map.ui.ChineseChartTypePane;
 /**
  * Created by richie on 16/1/29.
  */
-public class ChineseMapUI extends AbstractIndependentEChartsUI {
+public class EChartsChineseMapUI extends AbstractIndependentEChartsUI {
     @Override
     public AbstractChartTypePane getPlotTypePane() {
         return new ChineseChartTypePane();

@@ -3,7 +3,7 @@ package com.fr.solution.plugin.chart.echarts.map.ui;
 import com.fr.chart.chartattr.Chart;
 import com.fr.design.mainframe.chart.gui.type.UserDefinedChartTypePane;
 import com.fr.general.Inter;
-import com.fr.solution.plugin.chart.echarts.map.ChineseMap;
+import com.fr.solution.plugin.chart.echarts.map.EChartsChineseMap;
 import com.fr.solution.plugin.chart.echarts.map.plot.ChineseMapPlot;
 
 /**
@@ -41,7 +41,7 @@ public class ChineseChartTypePane extends UserDefinedChartTypePane {
 
     @Override
     public Chart getDefaultChart() {
-        return ChineseMap.charts[0];
+        return EChartsChineseMap.charts[0];
     }
 
     @Override
