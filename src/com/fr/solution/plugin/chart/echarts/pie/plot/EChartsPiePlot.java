@@ -6,9 +6,9 @@ import com.fr.chart.chartdata.NormalChartData;
 import com.fr.chart.chartglyph.PlotGlyph;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.Inter;
-import com.fr.solution.plugin.chart.echarts.pie.glyph.EChartsPiePlotGlyph;
-import com.fr.solution.plugin.chart.echarts.pie.monitor.MonitorPie;
 import com.fr.solution.plugin.chart.echarts.common.plot.EChartsPlot;
+import com.fr.solution.plugin.chart.echarts.pie.glyph.EChartsPiePlotGlyph;
+import com.fr.solution.plugin.chart.echarts.pie.monitor.MonitorHelper;
 import com.fr.stable.StringUtils;
 import com.fr.stable.fun.FunctionProcessor;
 import com.fr.stable.xml.XMLPrintWriter;
@@ -60,7 +60,7 @@ public class EChartsPiePlot extends EChartsPlot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return MonitorPie.getInstance();
+        return MonitorHelper.PIE;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {
