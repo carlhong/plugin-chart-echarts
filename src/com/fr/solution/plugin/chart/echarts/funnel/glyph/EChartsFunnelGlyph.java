@@ -15,8 +15,6 @@ public class EChartsFunnelGlyph extends EChartsGlyph{
         JSONObject jo = super.toJSONObject(repo);
         EChartsFunnelPlotGlyph plotGlyph = (EChartsFunnelPlotGlyph) getPlotGlyph();
         if (plotGlyph != null) {
-            jo.put("xAxis", plotGlyph.toXAxisData(repo));
-            jo.put("yAxis", plotGlyph.toYAxisData(repo));
             jo.put("dataZoom", plotGlyph.dataZoom(repo));
         }
         return jo;

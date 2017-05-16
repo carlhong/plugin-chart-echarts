@@ -7,7 +7,7 @@ import com.fr.stable.fun.impl.AbstractFunctionProcessor;
 
 public class MonitorHelper {
 
-    public static FunctionProcessor BAR = new AbstractFunctionProcessor() {
+    public static FunctionProcessor SCATTER = new AbstractFunctionProcessor() {
         @Override
         public int getId() {
             return FunctionHelper.generateFunctionID("com.fr.solution.plugin.chart.echarts.scatter");

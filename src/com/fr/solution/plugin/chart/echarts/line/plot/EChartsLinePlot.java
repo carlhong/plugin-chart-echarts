@@ -111,7 +111,7 @@ public class EChartsLinePlot extends EChartsPlot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return MonitorHelper.BAR;
+        return MonitorHelper.LINE;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {

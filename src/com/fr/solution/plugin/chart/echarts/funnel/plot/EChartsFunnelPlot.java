@@ -111,7 +111,7 @@ public class EChartsFunnelPlot extends EChartsPlot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return MonitorHelper.BAR;
+        return MonitorHelper.FUNNEL;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {

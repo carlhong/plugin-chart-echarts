@@ -111,7 +111,7 @@ public class EChartsScatterPlot extends EChartsPlot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return MonitorHelper.BAR;
+        return MonitorHelper.SCATTER;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {

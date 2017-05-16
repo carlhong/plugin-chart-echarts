@@ -74,24 +74,6 @@ public class EChartsFunnelPlotGlyph extends EChartsPlotGlyph {
         return result;
     }
 
-    public JSONObject toXAxisData(Repository repo) throws JSONException {
-        JSONObject result = JSONObject.create();
-            JSONArray data = JSONArray.create();
-            result.put("data", data);
-
-            for (int i = 0, len = getSeriesSize(); i < len; i++) {
-                DataSeries series = getSeries(i);
-                String name = series.getSeriesName();
-                data.put(name);
-            }
-        return result;
-    }
-
-
-    public JSONObject toYAxisData(Repository repo) throws JSONException {
-        return JSONObject.create();
-    }
-
     public JSONObject dataZoom(Repository repo) throws JSONException {
         JSONObject dataZoom = JSONObject.create();
         dataZoom.put("type", "inside");

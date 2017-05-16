@@ -111,7 +111,7 @@ public class EChartsGaugePlot extends EChartsPlot {
 
     @Override
     public FunctionProcessor getFunctionToRecord() {
-        return MonitorHelper.BAR;
+        return MonitorHelper.GAUGE;
     }
 
     public boolean accept(Class<? extends Plot> obClass) {
