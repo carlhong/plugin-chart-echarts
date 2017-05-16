@@ -76,7 +76,6 @@ public class EChartsPiePlotGlyph extends EChartsPlotGlyph {
                 }
             }
         }
-
         return result;
     }
 }

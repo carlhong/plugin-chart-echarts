@@ -41,27 +41,38 @@ public class ChineseMapPlotGlyph extends EChartsPlotGlyph {
                 .put("data", JSONArray.create().put(JSONObject.create().put("name", "北京").put("value", 20)))
         );
 
-        series.put(JSONObject.create()
-                .put("name", "iPhone4")
-                .put("type", "map")
-                .put("mapType", "china")
-                .put("itemStyle", createItemStyle(repo))
-                .put("data", JSONArray.create()
-                        .put(JSONObject.create().put("name", "江苏").put("value", 20))
-                        .put(JSONObject.create().put("name", "四川").put("value", 300))
-                )
-        );
+//        series.put(JSONObject.create()
+//                .put("name", "iPhone4")
+//                .put("type", "map")
+//                .put("mapType", "china")
+//                .put("itemStyle", createItemStyle(repo))
+//                .put("data", JSONArray.create()
+//                        .put(JSONObject.create().put("name", "江苏").put("value", 20))
+//                        .put(JSONObject.create().put("name", "四川").put("value", 300))
+//                )
+//        );
 
-        series.put(JSONObject.create()
-                .put("name", "iPhone5")
-                .put("type", "map")
-                .put("mapType", "china")
-                .put("itemStyle", createItemStyle(repo))
-                .put("data", JSONArray.create().put(JSONObject.create().put("name", "四川").put("value", 20)))
-        );
+//        series.put(JSONObject.create()
+//                .put("name", "iPhone5")
+//                .put("type", "map")
+//                .put("mapType", "china")
+//                .put("itemStyle", createItemStyle(repo))
+//                .put("data", JSONArray.create().put(JSONObject.create().put("name", "四川").put("value", 20)))
+//        );
 
         return series;
     }
+
+    public JSONObject toXAxisData(Repository repo) throws JSONException {
+        JSONObject xAxis = JSONObject.create();
+        return xAxis;
+    }
+
+    public JSONObject toYAxisData(Repository repo) throws JSONException {
+        JSONObject yAxis = JSONObject.create();
+        return yAxis;
+    }
+
 
     private JSONObject createItemStyle(Repository repo) throws JSONException {
         JSONObject itemStyle = JSONObject.create();

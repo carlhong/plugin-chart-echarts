@@ -4,7 +4,6 @@ import com.fr.base.Formula;
 import com.fr.base.Utils;
 import com.fr.chart.chartattr.Title;
 import com.fr.general.GeneralUtils;
-import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsTitleGlyph;
 import com.fr.stable.xml.XMLPrintWriter;
 import com.fr.stable.xml.XMLableReader;
@@ -16,13 +15,15 @@ public class EChartsTitle extends Title {
 
     public static final String XML_TAG = "EChartsTitle";
 
+    public EChartsTitle() {}
+
     @Override
     public EChartsTitleGlyph createGlyph() {
         Object text = getTextObject();
         String text4Glyph = null;
-        if(text instanceof Formula) {
+        if (text instanceof Formula) {
             Formula formula = (Formula)text;
-            if(formula.getResult() != null) {
+            if (formula.getResult() != null) {
                 text4Glyph = Utils.objectToString(formula.getResult());
             }
         } else {
@@ -51,5 +52,10 @@ public class EChartsTitle extends Title {
         super.writeXML(writer);
         writer.startTAG("Attr4ECharts").end();
         writer.end();
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

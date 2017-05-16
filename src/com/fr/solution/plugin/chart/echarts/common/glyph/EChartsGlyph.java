@@ -1,12 +1,11 @@
 package com.fr.solution.plugin.chart.echarts.common.glyph;
 
 import com.fr.chart.chartglyph.ChartGlyph;
-import com.fr.json.JSONArray;
 import com.fr.json.JSONException;
 import com.fr.json.JSONObject;
 import com.fr.solution.plugin.chart.echarts.common.theme.EChartsTheme;
+import com.fr.solution.plugin.chart.echarts.common.toolbox.EChartsToolbox;
 import com.fr.solution.plugin.chart.echarts.common.tooltip.EChartsTooltip;
-import com.fr.stable.StringUtils;
 import com.fr.stable.web.Repository;
 
 /**
@@ -16,6 +15,7 @@ public class EChartsGlyph extends ChartGlyph {
 
     private EChartsTheme theme;
     private EChartsTooltip tooltip;
+    private EChartsToolbox toolbox;
 
     public void setTheme(EChartsTheme theme) {
         this.theme = theme;
@@ -25,6 +25,10 @@ public class EChartsGlyph extends ChartGlyph {
         this.tooltip = tooltip;
     }
 
+    public void setToolbox(EChartsToolbox toolbox) {
+        this.toolbox = toolbox;
+    }
+
     @Override
     public JSONObject toJSONObject(Repository repo) throws JSONException {
         JSONObject jo = new JSONObject();
@@ -32,8 +36,6 @@ public class EChartsGlyph extends ChartGlyph {
         if (titleGlyph != null) {
             jo.put("title", titleGlyph.toJSONObject(repo));
         }
-
-
         EChartsLegendGlyph legendGlyph = (EChartsLegendGlyph) getLegendGlyph();
         if (legendGlyph != null) {
             jo.put("legend", legendGlyph.toJSONObject(repo));
@@ -47,6 +49,9 @@ public class EChartsGlyph extends ChartGlyph {
         }
         if (tooltip != null) {
             jo.put("tooltip", tooltip.toJSONObject(repo));
+        }
+        if (toolbox != null) {
+            jo.put("toolbox", toolbox.toJSONObject(repo));
         }
         return jo;
     }

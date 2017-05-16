@@ -21,10 +21,7 @@ public class EChartsThemePane extends BasicScrollPane<ECharts> {
 
     private UIDictionaryComboBox<String> themeComboBox;
 
-
-    public EChartsThemePane(EChartsStylePane stylePane) {
-
-    }
+    public EChartsThemePane(EChartsStylePane stylePane) {}
 
     @Override
     protected JPanel createContentPane() {

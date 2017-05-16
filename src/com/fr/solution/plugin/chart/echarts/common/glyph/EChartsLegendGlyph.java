@@ -23,7 +23,6 @@ public class EChartsLegendGlyph extends LegendGlyph {
                 .put("orient", "horizontal")
                 .put("y", "bottom");
         LegendItem[] items = getItems();
-
         if (ArrayUtils.isNotEmpty(items)) {
             JSONArray data = JSONArray.create();
             result.put("data", data);
@@ -32,6 +31,7 @@ public class EChartsLegendGlyph extends LegendGlyph {
                 data.put(jo.optString("label"));
             }
         }
+        result.put("show", isVisible());
         return result;
     }
 

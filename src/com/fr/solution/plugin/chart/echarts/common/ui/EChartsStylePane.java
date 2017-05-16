@@ -26,6 +26,7 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
     private BasicPane tooltipPane;
     private BasicPane themePane;
     private BasicPane legendPane;
+    private BasicPane toolboxPane;
 
     private AttributeChangeListener listener;
     private UIObserverListener uiObserverListener;
@@ -55,6 +56,12 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
             @Override
             protected String title4PopupWindow() {
                 return Inter.getLocText("Plugin-ECharts_Legend");
+            }
+        };
+        toolboxPane = new BasicPane() {
+            @Override
+            protected String title4PopupWindow() {
+                return Inter.getLocText("Plugin-ECharts_Toolbox");
             }
         };
     }
@@ -167,7 +174,7 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
             paneList.remove(index);
 
             /**
-             * richie:这边的目的是把空的展位面板替换成显示真是数据的面板
+             * richie:这边的目的是把空的展位面板替换成显示真实数据的面板
              */
             if (chosenPane == tooltipPane) {
                 chosenPane = new EChartsTooltipPane(EChartsStylePane.this);
@@ -175,6 +182,8 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
                 chosenPane = new EChartsThemePane(EChartsStylePane.this);
             } else if (chosenPane == legendPane) {
                 chosenPane = new EChartsLegendPane(EChartsStylePane.this);
+            } else if (chosenPane == toolboxPane) {
+                chosenPane = new EChartsToolboxPane(EChartsStylePane.this);
             }
 
             initSelfListener(chosenPane);
@@ -196,6 +205,7 @@ public class EChartsStylePane extends AbstractChartAttrPane implements UIObserve
             paneList.add(tooltipPane);
             paneList.add(themePane);
             paneList.add(legendPane);
+            paneList.add(toolboxPane);
             return paneList;
         }
 

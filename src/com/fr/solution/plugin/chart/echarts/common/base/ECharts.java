@@ -9,16 +9,21 @@ import com.fr.chart.chartdata.TopDefinition;
 import com.fr.chart.chartglyph.PlotGlyph;
 import com.fr.general.ComparatorUtils;
 import com.fr.general.xml.GeneralXMLTools;
+import com.fr.solution.plugin.chart.echarts.bar.glyph.EChartsBarGlyph;
 import com.fr.solution.plugin.chart.echarts.common.data.EChartsMoreNameCDDefinition;
 import com.fr.solution.plugin.chart.echarts.common.data.EChartsNormalReportDataDefinition;
 import com.fr.solution.plugin.chart.echarts.common.data.EChartsOneValueCDDefinition;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsLegendGlyph;
 import com.fr.solution.plugin.chart.echarts.common.glyph.EChartsTitleGlyph;
+import com.fr.solution.plugin.chart.echarts.common.legend.EChartsLegend;
 import com.fr.solution.plugin.chart.echarts.common.plot.EChartsPlot;
 import com.fr.solution.plugin.chart.echarts.common.theme.EChartsTheme;
 import com.fr.solution.plugin.chart.echarts.common.title.EChartsTitle;
+import com.fr.solution.plugin.chart.echarts.common.toolbox.EChartsToolbox;
 import com.fr.solution.plugin.chart.echarts.common.tooltip.EChartsTooltip;
+import com.fr.solution.plugin.chart.echarts.line.glyph.EChartsLineGlyph;
+import com.fr.solution.plugin.chart.echarts.scatter.glyph.EChartsScatterGlyph;
 import com.fr.stable.fun.FunctionHelper;
 import com.fr.stable.fun.FunctionProcessor;
 import com.fr.stable.fun.impl.AbstractFunctionProcessor;
@@ -43,9 +48,10 @@ public class ECharts extends Chart {
         }
     };
 
+    private EChartsLegend legend;
     private EChartsTheme theme;
     private EChartsTooltip tooltip;
-
+    private EChartsToolbox toolbox;
 
     public ECharts() {
         this(null);
@@ -55,7 +61,17 @@ public class ECharts extends Chart {
         super(plot);
         setWrapperName("EChartsFactory");
         setTitle(new EChartsTitle());
+        setLegend(new EChartsLegend());
         setTooltip(new EChartsTooltip());
+        setToolbox(new EChartsToolbox());
+    }
+
+    public EChartsLegend getLegend() {
+        return legend;
+    }
+
+    public void setLegend(EChartsLegend legend) {
+        this.legend = legend;
     }
 
     public EChartsTheme getTheme() {
@@ -74,9 +90,29 @@ public class ECharts extends Chart {
         this.tooltip = tooltip;
     }
 
+    public EChartsToolbox getToolbox() {
+        return toolbox;
+    }
+
+    public void setToolbox(EChartsToolbox toolbox) {
+        this.toolbox = toolbox;
+    }
+
     @Override
-    public BaseChartGlyph createGlyph(ChartData chartData) {
+        public BaseChartGlyph createGlyph(ChartData chartData) {
         EChartsGlyph glyph = new EChartsGlyph();
+        switch (this.getPlotType()) {
+            case "EChartsBarPlot":
+                glyph = new EChartsBarGlyph();
+                break;
+            case "EChartsLinePlot":
+                glyph = new EChartsLineGlyph();
+                break;
+            case "EChartsScatterPlot":
+                glyph = new EChartsScatterGlyph();
+                break;
+            default:
+        }
         glyph.setGeneralInfo(this);
         EChartsPlot EChartsPlot = (EChartsPlot) getPlot();
         if (EChartsPlot != null) {
@@ -85,7 +121,7 @@ public class ECharts extends Chart {
             EChartsLegendGlyph legendGlyph = EChartsPlot.createLegendGlyph(plotGlyph);
             glyph.setLegendGlyph(legendGlyph);
         }
-        EChartsTitle title = (EChartsTitle)getTitle();
+        EChartsTitle title = (EChartsTitle) getTitle();
         if (title != null) {
             EChartsTitleGlyph titleGlyph = title.createGlyph();
             glyph.setTitleGlyph(titleGlyph);
@@ -101,6 +137,9 @@ public class ECharts extends Chart {
         }
         if (tooltip != null) {
             glyph.setTooltip(tooltip);
+        }
+        if (toolbox != null) {
+            glyph.setToolbox(toolbox);
         }
 
         return glyph;
@@ -129,7 +168,7 @@ public class ECharts extends Chart {
             } else if (tmpNodeName.equals("ChartAttr")) {
                 this.setJSDraw(reader.getAttrAsBoolean("isJSDraw", true));
                 this.setStyleGlobal(reader.getAttrAsBoolean("isStyleGlobal",false));
-            } else if(ComparatorUtils.equals(tmpNodeName, "ChartDefinition")) {
+            } else if (ComparatorUtils.equals(tmpNodeName, "ChartDefinition")) {
                 reader.readXMLObject(new XMLReadable() {
                     public void readXML(XMLableReader reader) {
                         setFilterDefinition(readDefinition(reader));
@@ -139,6 +178,8 @@ public class ECharts extends Chart {
                 theme = (EChartsTheme) GeneralXMLTools.readXMLable(reader);
             } else if (tmpNodeName.equals(EChartsTooltip.XML_TAG)) {
                 tooltip = (EChartsTooltip) GeneralXMLTools.readXMLable(reader);
+            } else if (tmpNodeName.equals(EChartsToolbox.XML_TAG)) {
+                toolbox = (EChartsToolbox) GeneralXMLTools.readXMLable(reader);
             }
         }
     }
@@ -171,6 +212,9 @@ public class ECharts extends Chart {
         if (tooltip != null) {
             GeneralXMLTools.writeXMLable(writer, tooltip, EChartsTooltip.XML_TAG);
         }
+        if (toolbox != null) {
+            GeneralXMLTools.writeXMLable(writer, toolbox, EChartsToolbox.XML_TAG);
+        }
     }
 
     @Override
@@ -178,6 +222,7 @@ public class ECharts extends Chart {
         return ob instanceof ECharts
                 && super.equals(ob)
                 && ComparatorUtils.equals(theme, ((ECharts) ob).theme)
-                && ComparatorUtils.equals(tooltip, ((ECharts) ob).tooltip);
+                && ComparatorUtils.equals(tooltip, ((ECharts) ob).tooltip)
+                && ComparatorUtils.equals(toolbox, ((ECharts) ob).toolbox);
     }
 }

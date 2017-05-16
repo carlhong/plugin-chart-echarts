@@ -9,6 +9,7 @@
     <vendor email="solution@finereport.com">solution</vendor>
     <description><![CDATA[ECharts图表，源码和效果图可查看<a href="http://www.finedevelop.com:2015/projects/FS/repos/plugin-echarts-public">这里</a>。如果有其他类型的图表开发需求，可以联系solution@finereport.com。]]></description>
     <change-notes><![CDATA[
+        <p>[2017-05-16]柱状图、折线图、漏斗图、箱线图、仪表盘、散点图</p>
         <p>[2016-02-18]饼图(支持多分类饼图)</p>
         <p>[2016-03-03]增加国际化支持(美国英语)</p>
         <p>[2016-05-28]兼容最新的API升级</p>
@@ -24,10 +25,38 @@
     <extra-chart>
         <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPie"
                                   plotID="EChartsPiePlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.bar.EChartsBar"
+                                  plotID="EChartsBarPlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.line.EChartsLine"
+                                  plotID="EChartsLinePlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.scatter.EChartsScatter"
+                                  plotID="EChartsScatterPlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.boxplot.EChartsBoxplot"
+                                  plotID="EChartsBoxplotPlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.funnel.EChartsFunnel"
+                                  plotID="EChartsFunnelPlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.gauge.EChartsGauge"
+                                  plotID="EChartsGaugePlot"/>
+        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.map.EChartsChineseMap"
+                                  plotID="ChineseMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
         <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.pie.EChartsPieUI"
                                     plotID="EChartsPiePlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.bar.EChartsBarUI"
+                                    plotID="EChartsBarPlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.line.EChartsLineUI"
+                                    plotID="EChartsLinePlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.scatter.EChartsScatterUI"
+                                    plotID="EChartsScatterPlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.boxplot.EChartsBoxplotUI"
+                                    plotID="EChartsBoxplotPlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.funnel.EChartsFunnelUI"
+                                    plotID="EChartsFunnelPlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.gauge.EChartsGaugeUI"
+                                    plotID="EChartsGaugePlot"/>
+        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.map.EChartsChineseMapUI"
+                                    plotID="ChineseMapPlot"/>
     </extra-chart-designer>
 </plugin>

@@ -12,14 +12,10 @@ import com.fr.stable.web.Repository;
 public abstract class EChartsPlotGlyph extends PlotGlyph {
 
     @Override
-    public void layoutAxisGlyph(int resolution) {
-
-    }
+    public void layoutAxisGlyph(int resolution) {}
 
     @Override
-    public void layoutDataSeriesGlyph(int resolution) {
-
-    }
+    public void layoutDataSeriesGlyph(int resolution) {}
 
     @Override
     public JSONObject toJSONObject(Repository repo) throws JSONException {

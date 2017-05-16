@@ -73,7 +73,6 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
             ob = new ECharts();
         }
         EChartsTitle title = new EChartsTitle();
-        ob.setTitle(title);
         title.setTitleVisible(showTitle.getSelectedItem());
         String titleString = tinyFormulaPane.updateBean();
         Object titleObj;
@@ -83,6 +82,7 @@ public class EChartsTitlePane extends BasicScrollPane<ECharts> {
             titleObj = titleString;
         }
         title.setTextObject(titleObj);
+        ob.setTitle(title);
     }
 
     @Override

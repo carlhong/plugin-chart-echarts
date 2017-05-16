@@ -5,11 +5,11 @@ import com.fr.json.JSONException;
 import com.fr.json.JSONObject;
 import com.fr.stable.web.Repository;
 
+
 /**
  * Created by richie on 16/2/2.
  */
 public class EChartsTitleGlyph extends TitleGlyph {
-
 
     public EChartsTitleGlyph(String title) {
         setText(title);

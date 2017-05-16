@@ -43,11 +43,11 @@ public class EChartsPieChartTypePane extends AbstractEChartsTypePane {
 
     @Override
     public void populateBean(Chart chart) {
-        for(ChartImagePane imagePane : typeDemo) {
+        for (ChartImagePane imagePane : typeDemo) {
             imagePane.isPressing = false;
         }
         Plot plot = chart.getPlot();
-        if(plot instanceof EChartsPiePlot) {
+        if (plot instanceof EChartsPiePlot) {
             lastTypeIndex = ((EChartsPiePlot)plot).getPieType().ordinal();
             typeDemo.get(lastTypeIndex).isPressing = true;
         }
@@ -73,8 +73,8 @@ public class EChartsPieChartTypePane extends AbstractEChartsTypePane {
     public Plot getSelectedClonedPlot() {
         EChartsPiePlot newPlot = null;
         Chart[] pieChart = EChartsPie.charts;
-        for(int i = 0, len = pieChart.length; i < len; i++){
-            if(typeDemo.get(i).isPressing){
+        for (int i = 0, len = pieChart.length; i < len; i++) {
+            if (typeDemo.get(i).isPressing) {
                 newPlot = (EChartsPiePlot)pieChart[i].getPlot();
             }
         }
