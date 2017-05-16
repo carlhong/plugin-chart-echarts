@@ -37,8 +37,6 @@
                                   plotID="EChartsFunnelPlot"/>
         <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.gauge.EChartsGauge"
                                   plotID="EChartsGaugePlot"/>
-        <IndependentChartProvider class="com.fr.solution.plugin.chart.echarts.map.EChartsChineseMap"
-                                  plotID="ChineseMapPlot"/>
     </extra-chart>
 
     <extra-chart-designer>
@@ -56,7 +54,5 @@
                                     plotID="EChartsFunnelPlot"/>
         <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.gauge.EChartsGaugeUI"
                                     plotID="EChartsGaugePlot"/>
-        <IndependentChartUIProvider class="com.fr.solution.plugin.chart.echarts.map.EChartsChineseMapUI"
-                                    plotID="ChineseMapPlot"/>
     </extra-chart-designer>
 </plugin>
